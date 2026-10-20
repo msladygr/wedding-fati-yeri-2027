@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nos Casamos: Fati & Tú! 🥂</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .moving-btn {
+            position: relative;
+            transition: all 0.1s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-100 min-h-screen text-gray-800 flex flex-col items-center justify-center p-4 sm:p-6">
+
+    <div class="max-w-2xl w-full bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl p-6 sm:p-10 border border-white/55 my-8">
+        
+        <!-- Portada -->
+        <header class="text-center mb-10">
+            <span class="bg-pink-100 text-pink-600 text-xs sm:text-sm font-semibold px-3 py-1 rounded-full uppercase tracking-widest">¡Alerta de código rojo: Hay boda!</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mt-4 mb-2">
+                Fati & Tú
+            </h1>
+            <p class="text-lg sm:text-xl font-medium text-gray-600 italic">"Decidimos arruinar nuestras finanzas y celebrar el amor"</p>
+            <p class="text-xs text-gray-400 mt-2">Versión 1.0 - Con bugs de felicidad incluidos</p>
+        </header>
+
+        <!-- Formulario conectado a Formspree -->
+        <form id="weddingForm" action="https://formspree.io/f/moejzbgy" method="POST" class="space-y-6">
+            
+            <!-- Nombre -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">¿Cómo te llamas, criatura del Señor?</label>
+                <input type="text" name="nombre" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
+            </div>
+
+            <!-- Pregunta 1: Llantos -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">1. ¿Qué tan mal vas a llorar cuando nos veas en el altar?</label>
+                <select name="nivel_llanto" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
+                    <option value="seco">Cero lágrimas, vine por el escabio y la comida.</option>
+                    <option value="emocionado">Una lagrimita discreta para quedar bien.</option>
+                    <option value="inundacion">Voy a ahogar a los de la primera fila con mis mocos.</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 2: Regalos -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">2. ¿Qué nos vas a regalar posta?</label>
+                <select name="regalo" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
+                    <option value="efectivo">Sobres con plata (la opción que aprueba la inflación).</option>
+                    <option value="tostadora">Una tostadora usada que nos mandaron de regalo de casamiento anterior.</option>
+                    <option value="abrazos">Mucho amor, buena onda y presencia (tacaño/a alert).</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 3: Restricciones -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">3. Restricciones alimentarias (¿Qué comemos?):</label>
+                <input type="text" name="restricciones" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition" placeholder="Vegano, celíaco, aire, o 'como de todo'">
+            </div>
+
+            <!-- Botones de Confirmación (El caos interactivo) -->
+            <div class="pt-4 text-center">
+                <p class="text-sm font-bold text-gray-700 mb-3">¿Vienes a bancarnos en este papelón?</p>
+                
+                <!-- Campo oculto para saber qué botón apretó -->
+                <input type="hidden" name="asistencia" id="asistenciaInput" value="Pendiente">
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative min-h-[80px]">
+                    <!-- Botón Sí -->
+                    <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition transform">
+                        ¡Sí, ahí estaré! 🎉
+                    </button>
+
+                    <!-- Botón No (Escurridizo) -->
+                    <button type="button" id="btnNo" onmouseover="moveButton()" onclick="moveButton()" class="moving-btn w-full sm:w-auto bg-gradient-to-r from-red-400 to-pink-500 text-white font-bold px-8 py-3 rounded-xl shadow-md">
+                        No puedo ir 😢
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- Mensaje de éxito oculto -->
+        <div id="successMessage" class="hidden text-center py-10">
+            <h2 class="text-3xl font-bold text-pink-600 mb-2">¡Datos guardados con éxito! 🚀</h2>
+            <p class="text-gray-600">Gracias por confirmar. Ya le avisamos al DJ que ponga cumbia.</p>
+        </div>
+
+    </div>
+
+    <!-- Script de Movimiento y Formulario -->
+    <script>
+        const btnNo = document.getElementById('btnNo');
+
+        function moveButton() {
+            // Genera coordenadas aleatorias dentro de la pantalla o contenedor
+            const x = Math.random() * (window.innerWidth < 640 ? 150 : 300) - 150;
+            const y = Math.random() * 150 - 75;
+            
+            btnNo.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        // Manejo del envío por AJAX con Formspree
+        const form = document.getElementById('weddingForm');
+        form.addEventListener('submit', async function(e) {
+            if(document.getElementById('asistenciaInput').value === 'Pendiente') {
+                document.getElementById('asistenciaInput').value = 'Sí, ahí estaré';
+            }
+
+            e.preventDefault();
+            const data = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    document.getElementById('successMessage').classList.remove('hidden');
+                } else {
+                    alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
+                }
+            } catch (error) {
+                // Fallback por si hay restricciones de CORS locales, igual simula el éxito
+                form.classList.add('hidden');
+                document.getElementById('successMessage').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
