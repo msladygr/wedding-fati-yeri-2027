@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fati & Yeri 🌿 | 03.04.2027</title>
+    <title>Fati & Yeri | Nuestra Boda 03.04.2026</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair Display y Lora -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Playfair Display y Cormorant Garamond / Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Lora', serif;
-            background-color: #2c3531; /* Fondo boscoso profundo para resaltar el otoño */
-            color: #3b3a36;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #1e2622; /* Verde bosque profundo y elegante */
+            color: #2c3531;
             overflow-x: hidden;
         }
-        h1, h2, h3, .font-heading {
+        h1, h2, h3, .font-editorial {
             font-family: 'Playfair Display', serif;
         }
-        
-        /* Sistema de Hojas Otoñales Cayendo (Efecto Inmersivo) */
+        .font-serif-custom {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Sistema de Hojas Otoñales Realistas (Fondo Vivo) */
         .falling-leaves {
             position: fixed;
             top: 0;
@@ -27,39 +30,68 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 1;
+            z-index: 50;
             overflow: hidden;
         }
         .leaf {
             position: absolute;
             display: block;
-            width: 20px;
-            height: 20px;
-            background: #b8a07e;
-            opacity: 0.7;
+            width: 25px;
+            height: 25px;
+            background: #c49a6c;
+            opacity: 0.6;
             animation: fall linear infinite;
-            border-radius: 0 70% 0 70%;
+            border-radius: 0 80% 0 80%;
         }
-        .leaf:nth-child(even) {
-            background: #a87b6d;
-            border-radius: 70% 0 70% 0;
+        .leaf:nth-child(2n) {
+            background: #a36b51;
+            border-radius: 80% 0 80% 0;
+        }
+        .leaf:nth-child(3n) {
+            background: #879374;
         }
         @keyframes fall {
             0% {
                 top: -10%;
                 transform: translateX(0) rotate(0deg);
-                opacity: 0.9;
+                opacity: 0.8;
             }
             50% {
-                transform: translateX(80px) rotate(180deg);
+                transform: translateX(100px) rotate(180deg);
             }
             100% {
                 top: 110%;
-                transform: translateX(-50px) rotate(360deg);
-                opacity: 0.2;
+                transform: translateX(-80px) rotate(360deg);
+                opacity: 0.1;
             }
         }
 
+        /* Estilos de inputs de alta gama estilo editorial */
+        .editorial-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1.5px solid #d1cbbd;
+            border-radius: 0;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .editorial-input:focus {
+            outline: none;
+            border-color: #556b53;
+            box-shadow: none;
+        }
+        .editorial-select {
+            background-color: #f9f8f6;
+            border: 1px solid #d9d4c7;
+            border-radius: 12px;
+            padding: 14px 16px;
+            transition: all 0.3s ease;
+        }
+        .editorial-select:focus {
+            outline: none;
+            border-color: #556b53;
+            box-shadow: 0 0 0 3px rgba(85, 107, 83, 0.15);
+        }
         .moving-btn {
             position: relative;
             transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -67,86 +99,101 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-start p-4 sm:p-6 relative selection:bg-[#8a9a86] selection:text-white">
+<body class="min-h-screen flex flex-col items-center justify-start p-3 sm:p-6 relative selection:bg-[#556b53] selection:text-white">
 
-    <!-- Capa de Hojas de Otoño Animadas (Fondo Vivo) -->
+    <!-- Capa de Hojas de Otoño (Fondo Vivo Estilo Agencia) -->
     <div class="falling-leaves">
-        <span class="leaf" style="left: 5%; animation-duration: 9s; animation-delay: 0s; width: 18px; height: 18px;"></span>
-        <span class="leaf" style="left: 20%; animation-duration: 12s; animation-delay: 2s; width: 25px; height: 25px;"></span>
-        <span class="leaf" style="left: 40%; animation-duration: 8s; animation-delay: 1s; width: 15px; height: 15px;"></span>
-        <span class="leaf" style="left: 60%; animation-duration: 14s; animation-delay: 3s; width: 22px; height: 22px;"></span>
-        <span class="leaf" style="left: 80%; animation-duration: 10s; animation-delay: 1.5s; width: 19px; height: 19px;"></span>
-        <span class="leaf" style="left: 92%; animation-duration: 11s; animation-delay: 4s; width: 24px; height: 24px;"></span>
+        <span class="leaf" style="left: 8%; animation-duration: 11s; animation-delay: 0s; width: 22px; height: 22px;"></span>
+        <span class="leaf" style="left: 25%; animation-duration: 15s; animation-delay: 3s; width: 28px; height: 28px;"></span>
+        <span class="leaf" style="left: 45%; animation-duration: 9s; animation-delay: 1s; width: 18px; height: 18px;"></span>
+        <span class="leaf" style="left: 65%; animation-duration: 13s; animation-delay: 4s; width: 24px; height: 24px;"></span>
+        <span class="leaf" style="left: 85%; animation-duration: 10s; animation-delay: 2s; width: 20px; height: 20px;"></span>
     </div>
 
-    <!-- Contenedor Principal Flotante (Experiencia Vertical Infinita) -->
-    <div class="max-w-2xl w-full bg-[#fcfbfa] shadow-2xl rounded-3xl p-6 sm:p-12 border border-[#e3ded2] my-6 relative z-10 backdrop-blur-md">
+    <!-- Contenedor Web Editorial de Lujo -->
+    <div class="max-w-3xl w-full bg-[#fcfbfa] shadow-2xl rounded-3xl overflow-hidden my-6 relative z-10 border border-[#e3ded2]">
         
-        <!-- Barra superior botánica decorativa -->
-        <div class="absolute top-0 left-0 right-0 h-2.5 bg-gradient-to-r from-[#6b7c65] via-[#b8a07e] to-[#a87b6d]"></div>
+        <!-- HERO / PORTADA EDITORIAL -->
+        <div class="relative bg-[#24302a] text-[#f4f1ea] px-8 py-16 sm:py-24 text-center overflow-hidden">
+            <!-- Efecto de luz sutil en el fondo del hero -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none"></div>
+            
+            <div class="relative z-10">
+                <span class="inline-block bg-[#34423a] text-[#c4b59d] text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-widest border border-[#4a5c52] mb-6 shadow-sm">
+                    🌿 03.04.2026 • Boda Otoñal al Aire Libre 🌿
+                </span>
+                
+                <h1 class="text-6xl sm:text-8xl font-editorial font-normal tracking-tight mb-4 text-[#fcfbfa]">
+                    Fati <span class="text-[#c4b59d] italic font-serif-custom">&amp;</span> Yeri
+                </h1>
+                
+                <p class="text-lg sm:text-xl text-[#d1cbbd] font-serif-custom italic max-w-xl mx-auto mb-10 font-light">
+                    "Decidimos arruinar nuestras finanzas y celebrar el amor bajo los árboles"
+                </p>
 
-        <!-- SECCIÓN 1: HERO & DEDICATORIA PARA FAMILIA Y AMIGOS -->
-        <header class="text-center mb-10 pt-4">
-            <span class="inline-block bg-[#e8ede7] text-[#556b53] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-[#d2dfd0] mb-4 shadow-sm">
-                🍂 03.04.2026 • Boda Otoñal al Aire Libre 🍂
-            </span>
-            <h1 class="text-5xl sm:text-7xl font-extrabold text-[#3a4437] tracking-tight mb-3">
-                Fati & Yeri
-            </h1>
-            <p class="text-lg sm:text-xl text-[#7a7368] italic font-light px-4 mb-8">
-                "Decidimos arruinar nuestras finanzas y celebrar el amor bajo los árboles"
-            </p>
+                <!-- Cuenta Regresiva Estilo Minimalista de Lujo -->
+                <div class="grid grid-cols-4 gap-3 max-w-md mx-auto bg-[#1c2420]/80 backdrop-blur-md p-4 rounded-2xl border border-[#3b4d44] text-center shadow-lg">
+                    <div>
+                        <span id="days" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
+                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Días</span>
+                    </div>
+                    <div>
+                        <span id="hours" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
+                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Horas</span>
+                    </div>
+                    <div>
+                        <span id="minutes" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
+                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Min</span>
+                    </div>
+                    <div>
+                        <span id="seconds" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
+                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Seg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <!-- Dedicatoria Emotiva -->
-            <div class="bg-[#f4f1ea] p-6 rounded-2xl border border-[#e3ded2] text-left mb-8 shadow-inner">
-                <h3 class="font-heading text-lg font-bold text-[#4a5547] mb-2 text-center">Querida familia y amigos:</h3>
-                <p class="text-sm text-[#554d42] leading-relaxed text-center italic">
-                    "Llegó el momento que muchos esperaban y otros temían. Después de tantas risas, proyectos, mates y locuras compartidas, decidimos dar el gran paso. Queremos que este día quede grabado para siempre, y no hay ninguna posibilidad de celebrarlo sin ustedes acompañándonos en este nuevo capítulo."
+        <!-- SECCIÓN DE BIENVENIDA Y DEDICATORIA (ESTILO REVISTA) -->
+        <div class="px-8 sm:px-16 py-12 sm:py-16 text-center bg-[#fcfbfa]">
+            <span class="text-xs uppercase tracking-widest text-[#7a7368] block mb-2 font-semibold">Nuestra Invitación Especial</span>
+            <h2 class="text-3xl sm:text-4xl font-editorial text-[#2c3531] mb-6">Querida familia y amigos</h2>
+            
+            <div class="max-w-xl mx-auto space-y-4 text-[#554d42] text-base sm:text-lg font-light leading-relaxed font-serif-custom italic">
+                <p>
+                    "Llegó el momento que muchos esperaban y otros temían. Después de tantas risas, proyectos, mates y locuras compartidas, decidimos dar el gran paso."
+                </p>
+                <p>
+                    "Queremos que este día quede grabado para siempre, y no hay ninguna posibilidad de celebrarlo sin ustedes acompañándonos en este nuevo capítulo."
                 </p>
             </div>
 
-            <!-- Cuenta Regresiva Estética -->
-            <div class="grid grid-cols-4 gap-2 bg-[#fcfbfa] p-4 rounded-2xl border border-[#e3ded2] text-center shadow-sm">
-                <div>
-                    <span id="days" class="block text-2xl font-bold text-[#556b53]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-[#7a7368]">Días</span>
-                </div>
-                <div>
-                    <span id="hours" class="block text-2xl font-bold text-[#556b53]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-[#7a7368]">Horas</span>
-                </div>
-                <div>
-                    <span id="minutes" class="block text-2xl font-bold text-[#556b53]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-[#7a7368]">Min</span>
-                </div>
-                <div>
-                    <span id="seconds" class="block text-2xl font-bold text-[#556b53]">00</span>
-                    <span class="text-[10px] uppercase tracking-wider text-[#7a7368]">Seg</span>
-                </div>
-            </div>
-        </header>
+            <!-- Separador estético -->
+            <div class="w-16 h-0.5 bg-[#c4b59d] mx-auto mt-10"></div>
+        </div>
 
-        <!-- SECCIÓN 2: FORMULARIO CONTINUO (SCROLL INMERSIVO) -->
-        <div class="border-t border-[#e3ded2] pt-8 mt-8">
-            <div class="text-center mb-6">
-                <h2 class="text-2xl font-bold text-[#3a4437]">Confirmación de Asistencia & Cuestionario</h2>
-                <p class="text-xs text-[#7a7368] mt-1">Deslizá hacia abajo, completá tus datos y postulate para la fiesta del año.</p>
+        <!-- SECCIÓN DE CONFIRMACIÓN (DISEÑO EXPERIENCIAL) -->
+        <div class="bg-[#f4f1ea] px-8 sm:px-16 py-12 sm:py-16 border-t border-[#e3ded2]">
+            <div class="max-w-xl mx-auto text-center mb-10">
+                <span class="text-xs uppercase tracking-widest text-[#556b53] font-bold block mb-1">RSVP Interactivo</span>
+                <h3 class="text-3xl font-editorial text-[#2c3531]">El Cuestionario de Admisión</h3>
+                <p class="text-xs sm:text-sm text-[#7a7368] mt-2">Completá tus datos para asegurar tu lugar en el evento del año.</p>
             </div>
 
-            <form id="weddingForm" action="https://formspree.io/f/moejzbgy" method="POST" class="space-y-6">
+            <!-- Formulario Principal -->
+            <form id="weddingForm" action="https://formspree.io/f/moejzbgy" method="POST" class="max-w-xl mx-auto space-y-8">
                 
                 <!-- Nombre -->
-                <div class="bg-[#f8f6f0] p-4 rounded-2xl border border-[#e8e3d5]">
-                    <label class="block text-sm font-bold text-[#4a5547] mb-1">¿Quién chota sos?</label>
-                    <p class="text-[11px] text-[#7a7368] mb-2">Necesitamos saber a quién invitar (o a quién echar).</p>
-                    <input type="text" name="nombre" required class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition shadow-sm text-sm" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                    <label class="block text-sm font-bold text-[#3a4437] mb-1">¿Quién chota sos?</label>
+                    <p class="text-xs text-[#8c8275] mb-3">Necesitamos saber a quién invitar (o a quién echar de la lista).</p>
+                    <input type="text" name="nombre" required class="editorial-input w-full text-base text-[#2c3531]" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
                 </div>
 
                 <!-- Pregunta 1 -->
-                <div class="bg-[#f8f6f0] p-4 rounded-2xl border border-[#e8e3d5]">
-                    <label class="block text-sm font-bold text-[#4a5547] mb-1">1. ¿Quién de las dos va a mandar en el matrimonio?</label>
-                    <p class="text-[11px] text-[#7a7368] mb-2">Seamos honestos, la respuesta define nuestra amistad.</p>
-                    <select name="manda_matrimonio" required class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition text-gray-700 shadow-sm text-sm">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                    <label class="block text-sm font-bold text-[#3a4437] mb-1">1. ¿Quién de los dos va a mandar en el matrimonio?</label>
+                    <p class="text-xs text-[#8c8275] mb-3">Seamos honestos, la respuesta define nuestra amistad.</p>
+                    <select name="manda_matrimonio" required class="editorial-select w-full text-sm text-[#3a4437]">
                         <option value="" disabled selected>Seleccioná una, loco, dale 🧐</option>
                         <option value="fati_manda">Yeri, obvio (Wah-pah!).</option>
                         <option value="yo_mando_mentira">Más vale que Fati (mentira, la manejo con una sola mirada).</option>
@@ -155,56 +202,58 @@
                 </div>
 
                 <!-- Pregunta 2 -->
-                <div class="bg-[#f8f6f0] p-4 rounded-2xl border border-[#e8e3d5]">
-                    <label class="block text-sm font-bold text-[#4a5547] mb-1">2. ¿En qué modo de transporte caés?</label>
-                    <p class="text-[11px] text-[#7a7368] mb-2">Para calcular el estacionamiento y los tragos en la barra.</p>
-                    <select name="transporte_compania" required class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition text-gray-700 shadow-sm text-sm">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                    <label class="block text-sm font-bold text-[#3a4437] mb-1">2. ¿En qué modo de transporte caés a la estancia?</label>
+                    <p class="text-xs text-[#8c8275] mb-3">Para calcular el estacionamiento y los tragos en la barra.</p>
+                    <select name="transporte_compania" required class="editorial-select w-full text-sm text-[#3a4437]">
                         <option value="" disabled selected>A ver cómo nos movemos, contame 🚗</option>
-                        <option value="auto_propio">En auto propio (tengo lugar para sumar gente/soy una verga y quiero venir solo).</option>
+                        <option value="auto_propio">En auto propio (tengo lugar para sumar gente o manejo con coca cola toda la noche).</option>
                         <option value="uber_remis">En Uber / Cabify / Remis (vengo con el estómago preparado para la barra libre).</option>
-                        <option value="con_compania">Vengo con mi +1 (traigo refuerzos para perrear hasta que salga el sol).</option>
+                        <option value="con_compania">Vengo con mi +1 (traigo refuerzos para aguantar la fiesta hasta que prenda el sol).</option>
                     </select>
                 </div>
 
                 <!-- Pregunta 3 -->
-                <div class="bg-[#f8f6f0] p-4 rounded-2xl border border-[#e8e3d5]">
-                    <label class="block text-sm font-bold text-[#4a5547] mb-1">3. ¿Qué excusa vas a usar por si te querés rajar temprano?</label>
-                    <p class="text-[11px] text-[#7a7368] mb-2">Queremos saber cuál es tu clásico punto débil.</p>
-                    <select name="excusa_irse" required class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition text-gray-700 shadow-sm text-sm">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                    <label class="block text-sm font-bold text-[#3a4437] mb-1">3. ¿Qué excusa vas a usar por si te querés rajar temprano?</label>
+                    <p class="text-xs text-[#8c8275] mb-3">Queremos saber cuál es tu clásico punto débil.</p>
+                    <select name="excusa_irse" required class="editorial-select w-full text-sm text-[#3a4437]">
                         <option value="" disabled selected>Elegí una excusa antes de que me enoje 🙄</option>
                         <option value="mal_piedra">Me cayó mal la comida.</option>
                         <option value="perro">Tengo que ir a "darle de comer al perro" (a las 3 AM).</option>
-                        <option value="tios">Me puse a hablar de fulbito/política y casi me cago a piñas.</option>
+                        <option value="tios">Me puse a hablar de fulbito y casi me agarro a las piñas.</option>
                     </select>
                 </div>
 
                 <!-- Pregunta 4 -->
-                <div class="bg-[#f8f6f0] p-4 rounded-2xl border border-[#e8e3d5]">
-                    <label class="block text-sm font-bold text-[#4a5547] mb-1">4. Si armamos trencito y hay competencia de baile post-escabio, ¿con qué estilo nos vas a dar vergüenza ajena?</label>
-                    <select name="estilo_baile" required class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition text-gray-700 shadow-sm text-sm mb-3">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                    <label class="block text-sm font-bold text-[#3a4437] mb-1">4. Si armamos trencito y hay competencia de baile post-escabio:</label>
+                    <p class="text-xs text-[#8c8275] mb-3">¿Con qué estilo nos vas a dar vergüenza ajena?</p>
+                    <select name="estilo_baile" required class="editorial-select w-full text-sm text-[#3a4437] mb-4">
                         <option value="" disabled selected>¿Cómo bailás?</option>
                         <option value="helicoptero">El "helicóptero" sin coordinación bajo los árboles.</option>
                         <option value="paso_prohibido">El meneaito con ruido de rodillas.</option>
                         <option value="mesa_dulce">Mesa dulce haciendo sociales.</option>
                     </select>
-                    <label class="block text-xs font-semibold text-[#4a5547] mb-1">Restricciones alimentarias (asado/catering/postre/tu vieja):</label>
-                    <input type="text" name="restricciones" class="w-full px-4 py-2.5 rounded-xl border border-[#dcd6cc] bg-white transition text-sm shadow-sm" placeholder="Vegano, celíaco, aire, o 'como de todo'">
+
+                    <label class="block text-xs font-bold text-[#3a4437] mb-1">Restricciones alimentarias (asado/catering):</label>
+                    <input type="text" name="restricciones" class="editorial-input w-full text-sm text-[#2c3531]" placeholder="Vegano, celíaco, aire, o 'como de todo'">
                 </div>
 
-                <!-- Botones de Confirmación (El caos interactivo con el Botón Escurridizo) -->
-                <div class="pt-4 text-center">
-                    <p class="text-sm font-bold text-[#554d42] mb-3">¿Te esperamos?</p>
+                <!-- Botones de Confirmación (Con el mini-juego interactivo intacto) -->
+                <div class="pt-6 text-center">
+                    <p class="text-sm font-editorial font-bold text-[#3a4437] mb-4">¿Te esperamos?</p>
                     
                     <input type="hidden" name="asistencia" id="asistenciaInput" value="Pendiente">
 
                     <div id="botonesContainer" class="flex flex-col sm:flex-row items-center justify-center gap-4 relative min-h-[90px]">
                         <!-- Botón Sí -->
-                        <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-[#6b7c65] hover:bg-[#556550] text-white font-semibold px-8 py-3 rounded-xl shadow-md transition transform hover:scale-105">
+                        <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-[#556b53] hover:bg-[#435541] text-white font-medium px-8 py-3.5 rounded-xl shadow-md transition transform hover:scale-105 tracking-wide">
                             ¡Sí, ahí estaré! 🌳
                         </button>
 
                         <!-- Botón No (Escurridizo) -->
-                        <button type="button" id="btnNo" onmouseover="handleNoInteraction()" onclick="handleNoInteraction()" class="moving-btn w-full sm:w-auto bg-[#a87b6d] hover:bg-[#966b5e] text-white font-semibold px-8 py-3 rounded-xl shadow-md">
+                        <button type="button" id="btnNo" onmouseover="handleNoInteraction()" onclick="handleNoInteraction()" class="moving-btn w-full sm:w-auto bg-[#a36b51] hover:bg-[#8e5c44] text-white font-medium px-8 py-3.5 rounded-xl shadow-md tracking-wide">
                             No puedo ir 🍃
                         </button>
                     </div>
@@ -213,12 +262,17 @@
             </form>
 
             <!-- Mensaje de éxito oculto -->
-            <div id="successMessage" class="hidden text-center py-12">
-                <div class="w-16 h-16 bg-[#e8ede7] text-[#556b53] rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🌿</div>
-                <h2 class="text-3xl font-bold text-[#556b53] mb-2">¡Datos guardados con éxito!</h2>
-                <p class="text-[#7a7368] text-sm">Gracias por confirmar. Ya le avisamos al DJ para que prepare los parlantes y la cumbia bajo los árboles.</p>
+            <div id="successMessage" class="hidden text-center py-16">
+                <div class="w-16 h-16 bg-[#e8ede7] text-[#556b53] rounded-full flex items-center justify-center mx-auto mb-4 text-2xl shadow-sm">🌿</div>
+                <h3 class="text-3xl font-editorial text-[#2c3531] mb-2">¡Datos guardados con éxito!</h3>
+                <p class="text-[#7a7368] text-sm font-serif-custom italic">"Gracias por confirmar. Ya le avisamos al DJ para que prepare los parlantes y la cumbia bajo los árboles."</p>
             </div>
         </div>
+
+        <!-- FOOTER DE LA WEB -->
+        <footer class="bg-[#1e2622] text-[#9fa89e] py-8 text-center text-xs tracking-widest uppercase font-light">
+            Fati &amp; Yeri • 03.04.2026
+        </footer>
 
     </div>
 
@@ -266,7 +320,7 @@
 
                 const btnNuevo = document.createElement('button');
                 btnNuevo.type = 'button';
-                btnNuevo.className = 'w-full sm:w-auto bg-[#8c7853] hover:bg-[#786544] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition transform hover:scale-105';
+                btnNuevo.className = 'w-full sm:w-auto bg-[#c49a6c] hover:bg-[#b0875c] text-white font-medium px-6 py-3.5 rounded-xl shadow-md transition transform hover:scale-105 tracking-wide';
                 btnNuevo.innerText = 'Faaaa ¿otra vez querés poner que no? 🤨';
                 
                 btnNuevo.onclick = function() {
