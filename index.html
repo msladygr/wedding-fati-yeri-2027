@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #242b26 0%, #313833 45%, #3d3731 80%, #292421 100%);
+            background: linear-gradient(135deg, #1c231f 0%, #29302b 50%, #221d1a 100%);
             background-attachment: fixed;
             color: #2c3531;
             overflow-x: hidden;
@@ -23,7 +23,7 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Hojas otoñales sutiles y elegantes */
+        /* Sistema de Hojas Otoñales Inmersivas */
         .falling-leaves {
             position: fixed;
             top: 0;
@@ -37,10 +37,10 @@
         .leaf {
             position: absolute;
             display: block;
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             background: #b89b72;
-            opacity: 0.5;
+            opacity: 0.4;
             animation: fall linear infinite;
             border-radius: 0 70% 0 70%;
         }
@@ -55,42 +55,42 @@
             0% {
                 top: -10%;
                 transform: translateX(0) rotate(0deg);
-                opacity: 0.7;
+                opacity: 0.6;
             }
             50% {
-                transform: translateX(80px) rotate(180deg);
+                transform: translateX(60px) rotate(180deg);
             }
             100% {
                 top: 110%;
-                transform: translateX(-60px) rotate(360deg);
+                transform: translateX(-40px) rotate(360deg);
                 opacity: 0.1;
             }
         }
 
-        .editorial-input {
-            background: transparent;
-            border: none;
-            border-bottom: 1.5px solid #d1cbbd;
-            border-radius: 0;
-            padding: 10px 0;
-            transition: all 0.3s ease;
+        /* Animación de entrada al hacer scroll (Efecto Siteinspire) */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .editorial-input:focus {
+        .reveal-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilos minimalistas de autor para inputs */
+        .minimal-input {
+            background: #ffffff;
+            border: 1px solid #e3ded2;
+            border-radius: 14px;
+            padding: 16px 20px;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+        .minimal-input:focus {
             outline: none;
             border-color: #556b53;
-            box-shadow: none;
-        }
-        .editorial-select {
-            background-color: #f9f8f6;
-            border: 1px solid #d9d4c7;
-            border-radius: 12px;
-            padding: 14px 16px;
-            transition: all 0.3s ease;
-        }
-        .editorial-select:focus {
-            outline: none;
-            border-color: #556b53;
-            box-shadow: 0 0 0 3px rgba(85, 107, 83, 0.15);
+            box-shadow: 0 0 0 4px rgba(85, 107, 83, 0.1);
         }
         .moving-btn {
             position: relative;
@@ -103,132 +103,131 @@
 
     <!-- Capa de Hojas -->
     <div class="falling-leaves">
-        <span class="leaf" style="left: 10%; animation-duration: 12s; animation-delay: 0s;"></span>
-        <span class="leaf" style="left: 30%; animation-duration: 16s; animation-delay: 2s;"></span>
-        <span class="leaf" style="left: 50%; animation-duration: 10s; animation-delay: 1s;"></span>
-        <span class="leaf" style="left: 70%; animation-duration: 14s; animation-delay: 3s;"></span>
-        <span class="leaf" style="left: 90%; animation-duration: 11s; animation-delay: 1.5s;"></span>
+        <span class="leaf" style="left: 12%; animation-duration: 14s; animation-delay: 0s;"></span>
+        <span class="leaf" style="left: 35%; animation-duration: 18s; animation-delay: 2s;"></span>
+        <span class="leaf" style="left: 55%; animation-duration: 11s; animation-delay: 1s;"></span>
+        <span class="leaf" style="left: 75%; animation-duration: 15s; animation-delay: 3s;"></span>
+        <span class="leaf" style="left: 88%; animation-duration: 12s; animation-delay: 1.5s;"></span>
     </div>
 
-    <!-- Contenedor Web Editorial Boho-Chic -->
-    <div class="max-w-3xl w-full bg-[#fcfbfa] shadow-2xl rounded-3xl overflow-hidden my-6 relative z-10 border border-[#e3ded2]">
+    <!-- Contenedor Principal Estilo Editorial Minimalista -->
+    <div class="max-w-3xl w-full bg-[#fcfbfa] shadow-2xl rounded-[2.5rem] overflow-hidden my-6 relative z-10 border border-[#e3ded2]">
         
-        <!-- HERO / PORTADA -->
-        <div class="relative bg-[#1e2521] text-[#f4f1ea] px-8 py-16 sm:py-24 text-center overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none"></div>
+        <!-- HERO / PORTADA INMERSIVA -->
+        <div class="relative bg-[#171d19] text-[#f4f1ea] px-8 py-20 sm:py-32 text-center overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none"></div>
             
-            <div class="relative z-10">
-                <span class="inline-block bg-[#2b3630] text-[#c4b59d] text-xs font-semibold px-5 py-2 rounded-full uppercase tracking-widest border border-[#3f4f46] mb-6 shadow-sm">
-                    ✨ 03.04.2027 • Se armó la Boda ✨
+            <div class="relative z-10 reveal-section active">
+                <span class="inline-block bg-[#242d27] text-[#c4b59d] text-xs font-semibold px-6 py-2 rounded-full uppercase tracking-[0.2em] border border-[#37453d] mb-8 shadow-sm">
+                    03.04.2027 • Boda Editorial
                 </span>
                 
                 <h1 class="text-6xl sm:text-8xl font-editorial font-normal tracking-tight mb-4 text-[#fcfbfa]">
                     Fati <span class="text-[#c4b59d] italic font-serif-custom">&amp;</span> Yeri
                 </h1>
                 
-                <p class="text-lg sm:text-xl text-[#d1cbbd] font-serif-custom italic max-w-xl mx-auto mb-10 font-light">
+                <p class="text-lg sm:text-xl text-[#d1cbbd] font-serif-custom italic max-w-xl mx-auto mb-12 font-light">
                     "Decidimos arruinar nuestras finanzas y festejar a lo grande"
                 </p>
 
-                <!-- Cuenta Regresiva -->
-                <div class="grid grid-cols-4 gap-3 max-w-md mx-auto bg-[#161c19]/80 backdrop-blur-md p-4 rounded-2xl border border-[#2e3b34] text-center shadow-lg">
+                <!-- Cuenta Regresiva Minimalista -->
+                <div class="grid grid-cols-4 gap-3 max-w-md mx-auto bg-[#111613]/90 backdrop-blur-md p-5 rounded-2xl border border-[#26312a] text-center shadow-2xl">
                     <div>
                         <span id="days" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
-                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Días</span>
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-[#9fa89e]">Días</span>
                     </div>
                     <div>
                         <span id="hours" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
-                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Horas</span>
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-[#9fa89e]">Horas</span>
                     </div>
                     <div>
                         <span id="minutes" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
-                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Min</span>
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-[#9fa89e]">Min</span>
                     </div>
                     <div>
                         <span id="seconds" class="block text-2xl font-editorial font-bold text-[#e2d9c8]">00</span>
-                        <span class="text-[9px] uppercase tracking-widest text-[#9fa89e]">Seg</span>
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-[#9fa89e]">Seg</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN DE BIENVENIDA Y DEDICATORIA -->
-        <div class="px-8 sm:px-16 py-12 sm:py-14 text-center bg-[#fcfbfa]">
-            <span class="text-xs uppercase tracking-widest text-[#7a7368] block mb-2 font-semibold">Aviso Parroquial</span>
-            <h2 class="text-3xl sm:text-4xl font-editorial text-[#2c3531] mb-6">Che, nos casamos</h2>
+        <!-- SECCIÓN DE BIENVENIDA (REVEAL ON SCROLL) -->
+        <div class="px-8 sm:px-20 py-16 text-center bg-[#fcfbfa] reveal-section">
+            <span class="text-xs uppercase tracking-[0.2em] text-[#7a7368] block mb-3 font-semibold">Aviso Parroquial</span>
+            <h2 class="text-4xl font-editorial text-[#2c3531] mb-6">Che, nos casamos</h2>
             
-            <div class="max-w-xl mx-auto space-y-4 text-[#554d42] text-base sm:text-lg font-light leading-relaxed font-serif-custom italic">
+            <div class="max-w-lg mx-auto space-y-4 text-[#554d42] text-lg font-light leading-relaxed font-serif-custom italic">
                 <p>
-                    "Después de tantos mates, juntadas, risas y aguantarnos mutuamente, decidimos dar el gran paso y firmar los papeles. La verdad, no nos imaginamos este momento sin ustedes morfando, tomando y haciendo papelones con nosotros."
+                    "Después de tantos mates, juntadas, risas y aguantarnos mutuamente, decidimos dar el gran paso y firmar los papeles. No nos imaginamos este momento sin ustedes morfando, tomando y haciendo papelones con nosotras."
                 </p>
             </div>
 
-            <div class="w-16 h-0.5 bg-[#c4b59d] mx-auto mt-10"></div>
+            <div class="w-12 h-0.5 bg-[#c4b59d] mx-auto mt-12"></div>
         </div>
 
-        <!-- SECCIÓN: UBICACIÓN (LA POSADA DE LEÓN) -->
-        <div class="bg-[#f4f1ea] px-8 sm:px-16 py-10 sm:py-12 border-t border-[#e3ded2] text-center">
-            <span class="text-xs uppercase tracking-widest text-[#946853] font-bold block mb-1">Coordenadas del Delito 📍</span>
-            <h3 class="text-3xl font-editorial text-[#2c3531] mb-3">¿Dónde va a ser el bardo?</h3>
-            <div class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-sm border border-[#e8e3d5]">
-                <p class="text-lg font-editorial font-bold text-[#3a4437] mb-1">La Posada de León</p>
-                <p class="text-xs text-[#7a7368] italic mb-4">"Un lugar hermoso, con mucho verde y espacio de sobra para liberar el estrés y el fernet."</p>
-                <a href="https://www.instagram.com/laposadadeleon/?hl=es" target="_blank" class="inline-block bg-[#556b53] hover:bg-[#435541] text-white text-xs font-semibold px-5 py-2.5 rounded-xl shadow-sm transition">
-                    Chusmear el Instagram del lugar 🌿
+        <!-- UBICACIÓN (LA POSADA DE LEÓN) -->
+        <div class="bg-[#f4f1ea] px-8 sm:px-20 py-14 border-t border-[#e3ded2] text-center reveal-section">
+            <span class="text-xs uppercase tracking-[0.2em] text-[#946853] font-bold block mb-2">Coordenadas del Delito 📍</span>
+            <h3 class="text-3xl font-editorial text-[#2c3531] mb-4">¿Dónde va a ser el bardo?</h3>
+            <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-sm border border-[#e8e3d5]">
+                <p class="text-xl font-editorial font-bold text-[#3a4437] mb-2">La Posada de León</p>
+                <p class="text-sm text-[#7a7368] italic mb-6 leading-relaxed">"Un lugar hermoso, con mucho verde y espacio de sobra para liberar el estrés y el fernet."</p>
+                <a href="https://www.instagram.com/laposadadeleon/?hl=es" target="_blank" class="inline-block bg-[#556b53] hover:bg-[#435541] text-white text-xs font-semibold px-6 py-3 rounded-xl shadow-sm transition tracking-wider uppercase">
+                    Chusmear el Instagram 🌿
                 </a>
             </div>
         </div>
 
-        <!-- SECCIÓN: LO QUE TE ESPERA (SPOILER) -->
-        <div class="bg-[#fcfbfa] px-8 sm:px-16 py-12 sm:py-14 border-t border-[#e3ded2]">
-            <div class="max-w-xl mx-auto text-center mb-10">
-                <span class="text-xs uppercase tracking-widest text-[#946853] font-bold block mb-1">Spoiler Alert 🍂</span>
+        <!-- SPOILER / LO QUE TE ESPERA -->
+        <div class="bg-[#fcfbfa] px-8 sm:px-20 py-16 border-t border-[#e3ded2] reveal-section">
+            <div class="max-w-xl mx-auto text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.2em] text-[#946853] font-bold block mb-2">Spoiler Alert 🍂</span>
                 <h3 class="text-3xl font-editorial text-[#2c3531]">Lo que te espera</h3>
-                <p class="text-xs sm:text-sm text-[#7a7368] mt-2">Agendate cómo viene la mano para el 3 de abril.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto text-center">
-                <div class="bg-[#f9f8f6] p-6 rounded-2xl shadow-sm border border-[#e8e3d5]">
-                    <span class="text-2xl block mb-2">🥂</span>
-                    <h4 class="font-editorial font-bold text-[#3a4437] mb-1">Ceremonia al Aire Libre</h4>
-                    <p class="text-xs text-[#7a7368] leading-relaxed">Nada de iglesia: el cura nos prohibió la entrada por exceso de cumbia y porque la última vez que fuimos casi bendecimos un fernet (¿pensabas que era porque somos lesbianas? na mi cielaaa). Así que hacemos todo en la quinta, que Dios perdona pero el DJ cobra igual.</p>
+                <div class="bg-[#f9f8f6] p-8 rounded-3xl shadow-sm border border-[#e8e3d5] transition hover:-translate-y-1 duration-300">
+                    <span class="text-3xl block mb-3">🥂</span>
+                    <h4 class="font-editorial font-bold text-[#3a4437] mb-2 text-lg">Ceremonia</h4>
+                    <p class="text-xs text-[#7a7368] leading-relaxed">Nada de iglesia: el cura nos prohibió la entrada por exceso de cumbia y porque la última vez casi bendecimos un fernet. ¡Todo en la quinta!</p>
                 </div>
-                <div class="bg-[#f9f8f6] p-6 rounded-2xl shadow-sm border border-[#e8e3d5]">
-                    <span class="text-2xl block mb-2">🍷</span>
-                    <h4 class="font-editorial font-bold text-[#3a4437] mb-1">Morfi &amp; Barra Libre</h4>
-                    <p class="text-xs text-[#7a7368] leading-relaxed">Comida para reventar el botón del pantalón, tragos a rolete y buena onda toda la tarde.</p>
+                <div class="bg-[#f9f8f6] p-8 rounded-3xl shadow-sm border border-[#e8e3d5] transition hover:-translate-y-1 duration-300">
+                    <span class="text-3xl block mb-3">🍷</span>
+                    <h4 class="font-editorial font-bold text-[#3a4437] mb-2 text-lg">Morfi &amp; Barra</h4>
+                    <p class="text-xs text-[#7a7368] leading-relaxed">Comida para reventar el pantalón, tragos a rolete y buena onda toda la tarde.</p>
                 </div>
-                <div class="bg-[#f9f8f6] p-6 rounded-2xl shadow-sm border border-[#e8e3d5]">
-                    <span class="text-2xl block mb-2">🪩</span>
-                    <h4 class="font-editorial font-bold text-[#3a4437] mb-1">Fiesta &amp; Descontrol</h4>
+                <div class="bg-[#f9f8f6] p-8 rounded-3xl shadow-sm border border-[#e8e3d5] transition hover:-translate-y-1 duration-300">
+                    <span class="text-3xl block mb-3">🪩</span>
+                    <h4 class="font-editorial font-bold text-[#3a4437] mb-2 text-lg">Fiesta</h4>
                     <p class="text-xs text-[#7a7368] leading-relaxed">Cumbia, trencitos imposibles y papelones asegurados hasta que nos saquen con carpa.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN DE CONFIRMACIÓN (RSVP) -->
-        <div class="bg-[#f4f1ea] px-8 sm:px-16 py-12 sm:py-16 border-t border-[#e3ded2]">
-            <div class="max-w-xl mx-auto text-center mb-10">
-                <span class="text-xs uppercase tracking-widest text-[#556b53] font-bold block mb-1">RSVP Argen-chivo</span>
-                <h3 class="text-3xl font-editorial text-[#2c3531]">El Cuestionario de Admisión</h3>
-                <p class="text-xs sm:text-sm text-[#7a7368] mt-2">Completá tus datos para asegurar tu lugar en el evento del año.</p>
+        <!-- RSVP / FORMULARIO INTERACTIVO -->
+        <div class="bg-[#f4f1ea] px-8 sm:px-20 py-16 border-t border-[#e3ded2] reveal-section">
+            <div class="max-w-xl mx-auto text-center mb-12">
+                <span class="text-xs uppercase tracking-[0.2em] text-[#556b53] font-bold block mb-2">RSVP</span>
+                <h3 class="text-3xl font-editorial text-[#2c3531]">Confirmación de Asistencia</h3>
+                <p class="text-xs sm:text-sm text-[#7a7368] mt-2">Completá tus datos para asegurar tu lugar en el evento.</p>
             </div>
 
             <!-- Formulario Principal -->
             <form id="weddingForm" action="https://formspree.io/f/moejzbgy" method="POST" class="max-w-xl mx-auto space-y-8">
                 
                 <!-- Nombre -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#e8e3d5]">
                     <label class="block text-sm font-bold text-[#3a4437] mb-1">¿Quién chota sos?</label>
-                    <p class="text-xs text-[#8c8275] mb-3">Necesitamos saber a quién invitar (o a quién dejar afuera en la puerta).</p>
-                    <input type="text" name="nombre" required class="editorial-input w-full text-base text-[#2c3531]" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
+                    <p class="text-xs text-[#8c8275] mb-4">Necesitamos saber a quién invitar (o a quién dejar afuera).</p>
+                    <input type="text" name="nombre" required class="minimal-input w-full text-base text-[#2c3531]" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
                 </div>
 
                 <!-- Pregunta 1 -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#e8e3d5]">
                     <label class="block text-sm font-bold text-[#3a4437] mb-1">1. ¿Quién de las dos va a mandar en el matrimonio?</label>
-                    <p class="text-xs text-[#8c8275] mb-3">Seamos honestos, la respuesta define nuestra amistad.</p>
-                    <select name="manda_matrimonio" required class="editorial-select w-full text-sm text-[#3a4437]">
+                    <p class="text-xs text-[#8c8275] mb-4">Seamos honestos, la respuesta define nuestra amistad.</p>
+                    <select name="manda_matrimonio" required class="minimal-input w-full text-sm text-[#3a4437] cursor-pointer">
                         <option value="" disabled selected>Seleccioná una, loco, dale 🧐</option>
                         <option value="fati_manda">Yeri, obvio (Wah-pah!).</option>
                         <option value="yo_mando_mentira">Más vale que Fati (mentira, la manejo con una sola mirada).</option>
@@ -237,22 +236,22 @@
                 </div>
 
                 <!-- Pregunta 2 -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#e8e3d5]">
                     <label class="block text-sm font-bold text-[#3a4437] mb-1">2. ¿En qué modo de transporte caés a la joda?</label>
-                    <p class="text-xs text-[#8c8275] mb-3">Para calcular el estacionamiento y los hielos que vamos a gastar.</p>
-                    <select name="transporte_compania" required class="editorial-select w-full text-sm text-[#3a4437]">
+                    <p class="text-xs text-[#8c8275] mb-4">Para calcular el estacionamiento y los hielos.</p>
+                    <select name="transporte_compania" required class="minimal-input w-full text-sm text-[#3a4437] cursor-pointer">
                         <option value="" disabled selected>A ver cómo nos movemos, contame 🚗</option>
-                        <option value="auto_propio">En auto propio (tengo lugar para sumar gente o manejo tomando agua toda la noche).</option>
-                        <option value="uber_remis">En Uber / Cabify / Remis (vengo con el hígado listo para destruir la barra libre).</option>
+                        <option value="auto_propio">En auto propio (tengo lugar para sumar gente o manejo tomando agua).</option>
+                        <option value="uber_remis">En Uber / Cabify / Remis (vengo con el hígado listo para la barra libre).</option>
                         <option value="con_compania">Vengo con mi +1 (traigo refuerzos para aguantar hasta el amanecer).</option>
                     </select>
                 </div>
 
                 <!-- Pregunta 3 -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#e8e3d5]">
                     <label class="block text-sm font-bold text-[#3a4437] mb-1">3. ¿Qué excusa argenta vas a usar por si te querés rajar temprano?</label>
-                    <p class="text-xs text-[#8c8275] mb-3">Queremos saber cuál es tu clásico punto débil.</p>
-                    <select name="excusa_irse" required class="editorial-select w-full text-sm text-[#3a4437]">
+                    <p class="text-xs text-[#8c8275] mb-4">Queremos saber cuál es tu punto débil.</p>
+                    <select name="excusa_irse" required class="minimal-input w-full text-sm text-[#3a4437] cursor-pointer">
                         <option value="" disabled selected>Elegí una excusa antes de que me enoje 🙄</option>
                         <option value="mal_piedra">Me dio el "mal de piedra" y la silla se me pegó al cuerpo.</option>
                         <option value="perro">Tengo que ir a "darle de comer al perro" (a las 4 AM).</option>
@@ -261,32 +260,32 @@
                 </div>
 
                 <!-- Pregunta 4 -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-[#e8e3d5]">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-[#e8e3d5]">
                     <label class="block text-sm font-bold text-[#3a4437] mb-1">4. Si armamos trencito y hay competencia de baile post-escabio:</label>
-                    <p class="text-xs text-[#8c8275] mb-3">¿Con qué estilo nos vas a dar vergüenza ajena?</p>
-                    <select name="estilo_baile" required class="editorial-select w-full text-sm text-[#3a4437] mb-4">
+                    <p class="text-xs text-[#8c8275] mb-4">¿Con qué estilo nos vas a dar vergüenza ajena?</p>
+                    <select name="estilo_baile" required class="minimal-input w-full text-sm text-[#3a4437] cursor-pointer mb-6">
                         <option value="" disabled selected>¿Cómo bailás?</option>
-                        <option value="helicoptero">El "helicóptero" sin coordinación y transpirando la gota gorda.</option>
+                        <option value="helicoptero">El "helicóptero" sin coordinación y transpirando.</option>
                         <option value="paso_prohibido">El meneaito con crujidos de rodillas incluidos.</option>
-                        <option value="mesa_dulce">Me quedo al lado de la mesa dulce haciendo sociales para no papelonear.</option>
+                        <option value="mesa_dulce">Me quedo en la mesa dulce haciendo sociales para no papelonear.</option>
                     </select>
 
-                    <label class="block text-xs font-bold text-[#3a4437] mb-1">Restricciones alimentarias (¿Comés de todo o qué onda?):</label>
-                    <input type="text" name="restricciones" class="editorial-input w-full text-sm text-[#2c3531]" placeholder="Vegano, celíaco, aire, o 'como absolutamente todo'">
+                    <label class="block text-xs font-bold text-[#3a4437] mb-1">Restricciones alimentarias:</label>
+                    <input type="text" name="restricciones" class="minimal-input w-full text-sm text-[#2c3531]" placeholder="Vegano, celíaco, aire, o 'como absolutamente todo'">
                 </div>
 
                 <!-- Botones de Confirmación -->
-                <div class="pt-6 text-center">
-                    <p class="text-sm font-editorial font-bold text-[#3a4437] mb-4">¿Te esperamos o qué?</p>
+                <div class="pt-8 text-center">
+                    <p class="text-sm font-editorial font-bold text-[#3a4437] mb-6">¿Te esperamos o qué?</p>
                     
                     <input type="hidden" name="asistencia" id="asistenciaInput" value="Pendiente">
 
                     <div id="botonesContainer" class="flex flex-col sm:flex-row items-center justify-center gap-4 relative min-h-[90px]">
-                        <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-[#556b53] hover:bg-[#435541] text-white font-medium px-8 py-3.5 rounded-xl shadow-md transition transform hover:scale-105 tracking-wide">
+                        <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-[#556b53] hover:bg-[#435541] text-white font-medium px-8 py-4 rounded-2xl shadow-md transition transform hover:scale-105 tracking-wide">
                             ¡Sí, ahí estaré! 🥂
                         </button>
 
-                        <button type="button" id="btnNo" onmouseover="handleNoInteraction()" onclick="handleNoInteraction()" class="moving-btn w-full sm:w-auto bg-[#946853] hover:bg-[#7e5744] text-white font-medium px-8 py-3.5 rounded-xl shadow-md tracking-wide">
+                        <button type="button" id="btnNo" onmouseover="handleNoInteraction()" onclick="handleNoInteraction()" class="moving-btn w-full sm:w-auto bg-[#946853] hover:bg-[#7e5744] text-white font-medium px-8 py-4 rounded-2xl shadow-md tracking-wide">
                             No puedo ir 🍃
                         </button>
                     </div>
@@ -303,14 +302,34 @@
         </div>
 
         <!-- FOOTER -->
-        <footer class="bg-[#1e2521] text-[#9fa89e] py-8 text-center text-xs tracking-widest uppercase font-light">
+        <footer class="bg-[#171d19] text-[#9fa89e] py-10 text-center text-xs tracking-[0.2em] uppercase font-light">
             Fati &amp; Yeri • 03.04.2027
         </footer>
 
     </div>
 
-    <!-- Script de Cuenta Regresiva y Lógica del Botón Esquinero -->
+    <!-- Script de Animación en Scroll, Cuenta Regresiva y Botón Escurridizo -->
     <script>
+        // Animación "Reveal on Scroll" (Estilo Siteinspire)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Cuenta Regresiva para el 3 de Abril de 2027
         const weddingDate = new Date('Apr 3, 2027 16:00:00').getTime();
 
         function updateCountdown() {
@@ -352,7 +371,7 @@
 
                 const btnNuevo = document.createElement('button');
                 btnNuevo.type = 'button';
-                btnNuevo.className = 'w-full sm:w-auto bg-[#b89b72] hover:bg-[#a2845f] text-white font-medium px-6 py-3.5 rounded-xl shadow-md transition transform hover:scale-105 tracking-wide';
+                btnNuevo.className = 'w-full sm:w-auto bg-[#b89b72] hover:bg-[#a2845f] text-white font-medium px-6 py-4 rounded-2xl shadow-md transition transform hover:scale-105 tracking-wide';
                 btnNuevo.innerText = 'Faaaa ¿otra vez querés poner que no? 🤨';
                 
                 btnNuevo.onclick = function() {
