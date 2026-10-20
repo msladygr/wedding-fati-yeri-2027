@@ -14,7 +14,8 @@
         }
         .moving-btn {
             position: relative;
-            transition: all 0.1s ease-out;
+            transition: all 0.15s ease-out;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -29,7 +30,6 @@
                 Fati & Tú
             </h1>
             <p class="text-lg sm:text-xl font-medium text-gray-600 italic">"Decidimos arruinar nuestras finanzas y celebrar el amor"</p>
-            <p class="text-xs text-gray-400 mt-2">Versión 1.0 - Con bugs de felicidad incluidos</p>
         </header>
 
         <!-- Formulario conectado a Formspree -->
@@ -41,29 +41,39 @@
                 <input type="text" name="nombre" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
             </div>
 
-            <!-- Pregunta 1: Llantos -->
+            <!-- Pregunta 1: Manda en el matrimonio -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">1. ¿Qué tan mal vas a llorar cuando nos veas en el altar?</label>
-                <select name="nivel_llanto" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
-                    <option value="seco">Cero lágrimas, vine por el escabio y la comida.</option>
-                    <option value="emocionado">Una lagrimita discreta para quedar bien.</option>
-                    <option value="inundacion">Voy a ahogar a los de la primera fila con mis mocos.</option>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">1. ¿Quién de los dos va a mandar en el matrimonio (seamos honestos)?</label>
+                <select name="manda_matrimonio" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
+                    <option value="fati_manda">Fati, mal que me pese (yo solo soy el decorado).</option>
+                    <option value="yo_mando_mentira">Yo tengo voz de mando (mentira, me manejan con una sola mirada).</option>
+                    <option value="anarquia">Ninguno, esto va a ser una anarquía total de amor y fernet.</option>
                 </select>
             </div>
 
-            <!-- Pregunta 2: Regalos -->
+            <!-- Pregunta 2: Excusa para irse temprano -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">2. ¿Qué nos vas a regalar posta?</label>
-                <select name="regalo" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
-                    <option value="efectivo">Sobres con plata (la opción que aprueba la inflación).</option>
-                    <option value="tostadora">Una tostadora usada que nos mandaron de regalo de casamiento anterior.</option>
-                    <option value="abrazos">Mucho amor, buena onda y presencia (tacaño/a alert).</option>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">2. ¿Cuál es tu excusa argenta por si te querés rajar temprano?</label>
+                <select name="excusa_irse" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
+                    <option value="mal_piedra">Me dio el "mal de piedra" (no me muevo de la silla ni con grúa).</option>
+                    <option value="perro">Tengo que ir a "darle de comer al perro" (a las 3 AM).</option>
+                    <option value="tios">Me colgué hablando con los tíos de política y me bajó la presión.</option>
                 </select>
             </div>
 
-            <!-- Pregunta 3: Restricciones -->
+            <!-- Pregunta 3: Baile y vergüenza ajena -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">3. Restricciones alimentarias (¿Qué comemos?):</label>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">3. Si armamos trencito y hay competencia de baile post-escabio, ¿con qué estilo nos vas a dar vergüenza ajena?</label>
+                <select name="estilo_baile" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
+                    <option value="helicoptero">El "helicóptero" sin coordinación y transpirando la gota gorda.</option>
+                    <option value="paso_prohibido">El paso prohibido de los 2000 que ya ni mis rodillas bancan.</option>
+                    <option value="mesa_dulce">Me quedo al lado de la mesa dulce haciendo sociales para no papelonear.</option>
+                </select>
+            </div>
+
+            <!-- Pregunta 4: Restricciones alimentarias -->
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">4. Restricciones alimentarias (¿Qué comemos?):</label>
                 <input type="text" name="restricciones" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition" placeholder="Vegano, celíaco, aire, o 'como de todo'">
             </div>
 
@@ -74,14 +84,14 @@
                 <!-- Campo oculto para saber qué botón apretó -->
                 <input type="hidden" name="asistencia" id="asistenciaInput" value="Pendiente">
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative min-h-[80px]">
+                <div id="botonesContainer" class="flex flex-col sm:flex-row items-center justify-center gap-4 relative min-h-[90px]">
                     <!-- Botón Sí -->
                     <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition transform">
                         ¡Sí, ahí estaré! 🎉
                     </button>
 
-                    <!-- Botón No (Escurridizo) -->
-                    <button type="button" id="btnNo" onmouseover="moveButton()" onclick="moveButton()" class="moving-btn w-full sm:w-auto bg-gradient-to-r from-red-400 to-pink-500 text-white font-bold px-8 py-3 rounded-xl shadow-md">
+                    <!-- Botón No (Escurridizo con contador de intentos) -->
+                    <button type="button" id="btnNo" onmouseover="handleNoInteraction()" onclick="handleNoInteraction()" class="moving-btn w-full sm:w-auto bg-gradient-to-r from-red-400 to-pink-500 text-white font-bold px-8 py-3 rounded-xl shadow-md">
                         No puedo ir 😢
                     </button>
                 </div>
@@ -100,16 +110,39 @@
     <!-- Script de Movimiento y Formulario -->
     <script>
         const btnNo = document.getElementById('btnNo');
+        let intentoNo = 0;
+        const maxIntentos = 4;
 
-        function moveButton() {
-            // Genera coordenadas aleatorias dentro de la pantalla o contenedor
-            const x = Math.random() * (window.innerWidth < 640 ? 150 : 300) - 150;
-            const y = Math.random() * 150 - 75;
+        function handleNoInteraction() {
+            intentoNo++;
             
-            btnNo.style.transform = `translate(${x}px, ${y}px)`;
+            if (intentoNo < maxIntentos) {
+                // Sigue escapando
+                const x = Math.random() * (window.innerWidth < 640 ? 150 : 300) - 150;
+                const y = Math.random() * 150 - 75;
+                btnNo.style.transform = `translate(${x}px, ${y}px)`;
+            } else {
+                // ¡Lo atrapó! Mostramos el cartel gracioso
+                alert('OAAAA, ¿creías que te íbamos a dejar que no vengas? 🤌✨');
+                
+                // Reemplazamos el botón "No" por el nuevo botón gracioso
+                const container = document.getElementById('botonesContainer');
+                btnNo.remove(); // Desaparece el botón del NO
+
+                const btnNuevo = document.createElement('button');
+                btnNuevo.type = 'button';
+                btnNuevo.className = 'w-full sm:w-auto bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold px-6 py-3 rounded-xl shadow-md hover:scale-105 transition transform';
+                btnNuevo.innerText = '¿Otra vez querés intentar decir que no? 🤨';
+                
+                // Si hacen clic en este nuevo botón, redobla la apuesta con otra alerta y se vuelve a transformar en un chiste
+                btnNuevo.onclick = function() {
+                    alert('Spoiler: La respuesta correcta sigue siendo el botón verde de al lado. 😉');
+                };
+
+                container.appendChild(btnNuevo);
+            }
         }
 
-        // Manejo del envío por AJAX con Formspree
         const form = document.getElementById('weddingForm');
         form.addEventListener('submit', async function(e) {
             if(document.getElementById('asistenciaInput').value === 'Pendiente') {
@@ -133,7 +166,6 @@
                     alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
                 }
             } catch (error) {
-                // Fallback por si hay restricciones de CORS locales, igual simula el éxito
                 form.classList.add('hidden');
                 document.getElementById('successMessage').classList.remove('hidden');
             }
