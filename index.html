@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Nos Casamos: Fati & Tú! 🥂</title>
+    <title>¡Nos Casamos: Fati & Yeri! 🌿🥂</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Llora / Lora y Playfair Display para un estilo rústico y elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Lora', serif;
+            background-color: #f4f1ea; /* Tono lino/arena suave */
+            color: #3b3a36;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
         }
         .moving-btn {
             position: relative;
@@ -19,17 +24,23 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-100 min-h-screen text-gray-800 flex flex-col items-center justify-center p-4 sm:p-6">
+<body class="bg-[#f4f1ea] min-h-screen flex flex-col items-center justify-center p-4 sm:p-6">
 
-    <div class="max-w-2xl w-full bg-white/80 backdrop-blur-md shadow-2xl rounded-3xl p-6 sm:p-10 border border-white/55 my-8">
+    <!-- Contenedor principal estilo tarjeta rústica -->
+    <div class="max-w-2xl w-full bg-[#fcfbfa] shadow-xl rounded-2xl p-6 sm:p-10 border border-[#e3ded2] my-8 relative overflow-hidden">
         
+        <!-- Detalle decorativo superior campestre -->
+        <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#8a9a86] via-[#b8a07e] to-[#6b7c65]"></div>
+
         <!-- Portada -->
-        <header class="text-center mb-10">
-            <span class="bg-pink-100 text-pink-600 text-xs sm:text-sm font-semibold px-3 py-1 rounded-full uppercase tracking-widest">¡Alerta de código rojo: Hay boda!</span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mt-4 mb-2">
-                Fati & Tú
+        <header class="text-center mb-10 pt-4">
+            <span class="bg-[#e8ede7] text-[#556b53] text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-widest border border-[#d2dfd0]">
+                🌿 ¡Nos casamos al aire libre! 🌿
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-[#3a4437] mt-5 mb-2">
+                Fati & Yeri
             </h1>
-            <p class="text-lg sm:text-xl font-medium text-gray-600 italic">"Decidimos arruinar nuestras finanzas y celebrar el amor"</p>
+            <p class="text-lg sm:text-xl font-medium text-[#7a7368] italic">"Decidimos arruinar nuestras finanzas y celebrar el amor bajo los árboles"</p>
         </header>
 
         <!-- Formulario conectado a Formspree -->
@@ -37,62 +48,62 @@
             
             <!-- Nombre -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">¿Cómo te llamas, criatura del Señor?</label>
-                <input type="text" name="nombre" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
+                <label class="block text-sm font-semibold text-[#4a5547] mb-1">¿Quién chota sos?</label>
+                <input type="text" name="nombre" required class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition" placeholder="Ej. Tu tía la chismosa / Tu mejor amigo">
             </div>
 
             <!-- Pregunta 1: Manda en el matrimonio -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">1. ¿Quién de los dos va a mandar en el matrimonio (seamos honestos)?</label>
-                <select name="manda_matrimonio" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
-                    <option value="fati_manda">Fati, mal que me pese (yo solo soy el decorado).</option>
-                    <option value="yo_mando_mentira">Yo tengo voz de mando (mentira, me manejan con una sola mirada).</option>
-                    <option value="anarquia">Ninguno, esto va a ser una anarquía total de amor y fernet.</option>
+                <label class="block text-sm font-semibold text-[#4a5547] mb-1">1. ¿Quién de los dos va a mandar en el matrimonio (seamos honestos)?</label>
+                <select name="manda_matrimonio" class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition">
+                    <option value="fati_manda">Yeri, obvio (Wah-pah!).</option>
+                    <option value="yo_mando_mentira">Mas vale que Fati (mentira, la manejo con una sola mirada).</option>
+                    <option value="anarquia">Ninguna, son las gatas las que mandan.</option>
                 </select>
             </div>
 
             <!-- Pregunta 2: Excusa para irse temprano -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">2. ¿Cuál es tu excusa argenta por si te querés rajar temprano?</label>
-                <select name="excusa_irse" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
-                    <option value="mal_piedra">Me dio el "mal de piedra" (no me muevo de la silla ni con grúa).</option>
+                <label class="block text-sm font-semibold text-[#4a5547] mb-1">2. ¿Qué excusa vas a usar por si te querés rajar temprano?</label>
+                <select name="excusa_irse" class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition">
+                    <option value="mal_piedra">Me cayó mal la comida.</option>
                     <option value="perro">Tengo que ir a "darle de comer al perro" (a las 3 AM).</option>
-                    <option value="tios">Me colgué hablando con los tíos de política y me bajó la presión.</option>
+                    <option value="tios">Me puse a hablar de fulbito y casi me agarro a las piñas.</option>
                 </select>
             </div>
 
             <!-- Pregunta 3: Baile y vergüenza ajena -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">3. Si armamos trencito y hay competencia de baile post-escabio, ¿con qué estilo nos vas a dar vergüenza ajena?</label>
-                <select name="estilo_baile" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition">
-                    <option value="helicoptero">El "helicóptero" sin coordinación y transpirando la gota gorda.</option>
-                    <option value="paso_prohibido">El paso prohibido de los 2000 que ya ni mis rodillas bancan.</option>
-                    <option value="mesa_dulce">Me quedo al lado de la mesa dulce haciendo sociales para no papelonear.</option>
+                <label class="block text-sm font-semibold text-[#4a5547] mb-1">3. Si armamos trencito y hay competencia de baile post-escabio, ¿con qué estilo nos vas a dar vergüenza ajena?</label>
+                <select name="estilo_baile" class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition">
+                    <option value="helicoptero">El "helicóptero" sin coordinación y transpirando abajo de los árboles.</option>
+                    <option value="paso_prohibido">El meneaito hasta abajo con el ruido de tus rodillas.</option>
+                    <option value="mesa_dulce">Me quedo al lado de la mesa dulce haciendo sociales para no morir de la verguenza (o del dolor).</option>
                 </select>
             </div>
 
             <!-- Pregunta 4: Restricciones alimentarias -->
             <div>
-                <label class="block text-sm font-semibold text-gray-700 mb-1">4. Restricciones alimentarias (¿Qué comemos?):</label>
-                <input type="text" name="restricciones" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white/50 transition" placeholder="Vegano, celíaco, aire, o 'como de todo'">
+                <label class="block text-sm font-semibold text-[#4a5547] mb-1">4. Restricciones alimentarias (¿Qué comemos en el asado/catering?):</label>
+                <input type="text" name="restricciones" class="w-full px-4 py-3 rounded-xl border border-[#dcd6cc] focus:outline-none focus:ring-2 focus:ring-[#8a9a86] bg-white transition" placeholder="Vegano, celíaco, aire, o 'como de todo'">
             </div>
 
             <!-- Botones de Confirmación (El caos interactivo) -->
             <div class="pt-4 text-center">
-                <p class="text-sm font-bold text-gray-700 mb-3">¿Vienes a bancarnos en este papelón?</p>
+                <p class="text-sm font-bold text-[#554d42] mb-3">¿Te esperamos?</p>
                 
                 <!-- Campo oculto para saber qué botón apretó -->
                 <input type="hidden" name="asistencia" id="asistenciaInput" value="Pendiente">
 
                 <div id="botonesContainer" class="flex flex-col sm:flex-row items-center justify-center gap-4 relative min-h-[90px]">
                     <!-- Botón Sí -->
-                    <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition transform">
-                        ¡Sí, ahí estaré! 🎉
+                    <button type="submit" id="btnYes" onclick="document.getElementById('asistenciaInput').value='Sí, ahí estaré';" class="w-full sm:w-auto bg-[#6b7c65] hover:bg-[#556550] text-white font-semibold px-8 py-3 rounded-xl shadow-md transition transform hover:scale-105">
+                        ¡Sí, ahí estaré! 🌳
                     </button>
 
                     <!-- Botón No (Escurridizo con contador de intentos) -->
-                    <button type="button" id="btnNo" onmouseover="handleNoInteraction()" onclick="handleNoInteraction()" class="moving-btn w-full sm:w-auto bg-gradient-to-r from-red-400 to-pink-500 text-white font-bold px-8 py-3 rounded-xl shadow-md">
-                        No puedo ir 😢
+                    <button type="button" id="btnNo" onmouseover="handleNoInteraction()" onclick="handleNoInteraction()" class="moving-btn w-full sm:w-auto bg-[#a87b6d] hover:bg-[#966b5e] text-white font-semibold px-8 py-3 rounded-xl shadow-md">
+                        No puedo ir 🍃
                     </button>
                 </div>
             </div>
@@ -101,8 +112,8 @@
 
         <!-- Mensaje de éxito oculto -->
         <div id="successMessage" class="hidden text-center py-10">
-            <h2 class="text-3xl font-bold text-pink-600 mb-2">¡Datos guardados con éxito! 🚀</h2>
-            <p class="text-gray-600">Gracias por confirmar. Ya le avisamos al DJ que ponga cumbia.</p>
+            <h2 class="text-3xl font-bold text-[#556b53] mb-2">¡Datos guardados con éxito! 🌿</h2>
+            <p class="text-[#7a7368]">Gracias por confirmar. Ya le avisamos al DJ para que ponga cumbia.</p>
         </div>
 
     </div>
@@ -117,26 +128,22 @@
             intentoNo++;
             
             if (intentoNo < maxIntentos) {
-                // Sigue escapando
                 const x = Math.random() * (window.innerWidth < 640 ? 150 : 300) - 150;
                 const y = Math.random() * 150 - 75;
                 btnNo.style.transform = `translate(${x}px, ${y}px)`;
             } else {
-                // ¡Lo atrapó! Mostramos el cartel gracioso
-                alert('OAAAA, ¿creías que te íbamos a dejar que no vengas? 🤌✨');
+                alert('OAAAA, ¿creías que te íbamos a dejar que no vengas? 🤌🌿');
                 
-                // Reemplazamos el botón "No" por el nuevo botón gracioso
                 const container = document.getElementById('botonesContainer');
-                btnNo.remove(); // Desaparece el botón del NO
+                btnNo.remove();
 
                 const btnNuevo = document.createElement('button');
                 btnNuevo.type = 'button';
-                btnNuevo.className = 'w-full sm:w-auto bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold px-6 py-3 rounded-xl shadow-md hover:scale-105 transition transform';
-                btnNuevo.innerText = '¿Otra vez querés intentar decir que no? 🤨';
+                btnNuevo.className = 'w-full sm:w-auto bg-[#8c7853] hover:bg-[#786544] text-white font-semibold px-6 py-3 rounded-xl shadow-md transition transform hover:scale-105';
+                btnNuevo.innerText = 'Faaaa ¿otra vez querés poner que no? 🤨';
                 
-                // Si hacen clic en este nuevo botón, redobla la apuesta con otra alerta y se vuelve a transformar en un chiste
                 btnNuevo.onclick = function() {
-                    alert('Spoiler: La respuesta correcta sigue siendo el botón verde de al lado. 😉');
+                    alert('Spoiler: La respuesta correcta sigue siendo el botón de al lado gil/a 😉');
                 };
 
                 container.appendChild(btnNuevo);
